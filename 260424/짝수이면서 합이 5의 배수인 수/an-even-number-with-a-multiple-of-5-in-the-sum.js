@@ -1,11 +1,10 @@
 const fs = require("fs");
 const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
-let answer ="";
+let answer = "No";
 
 function isEven(n){
-    if(n% 2=== 0)return true;
-    else return false;
+    return n % 2 ===0 ? true : false;
 }
 
 if(isEven(n)){
