@@ -5,7 +5,7 @@ let answer ="";
 
 function isEven(n){
     if(n% 2=== 0)return true;
-    else false;
+    else return false;
 }
 
 if(isEven(n)){
@@ -13,7 +13,7 @@ if(isEven(n)){
     let y = n % 10;
     
     let sum = x + y;
-    if(sum % 5 ===0) answer = "Yes";
+    if(sum % 5 === 0) answer = "Yes";
     else answer = "No";
 }
 
