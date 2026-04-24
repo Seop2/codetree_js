@@ -1,19 +1,14 @@
 const fs = require("fs");
 const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
-let answer = "No";
 
-function isEven(n){
-    return n % 2 ===0 ? true : false;
+
+const isSolutionNumber= (n) => {
+    if(n % 2 !== 0) return false;
+    const ten = Math.floor(n / 10);
+    const one = n % 10;
+    return (ten + one)% 5===0;
 }
 
-if(isEven(n)){
-    let x = Math.floor(n / 10);
-    let y = n % 10;
-    
-    let sum = x + y;
-    if(sum % 5 === 0) answer = "Yes";
-    else answer = "No";
-}
 
-console.log(answer);
+console.log(isSolutionNumber(n) ? "Yes" : "No")
