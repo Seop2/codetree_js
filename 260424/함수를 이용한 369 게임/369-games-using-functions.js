@@ -4,7 +4,8 @@ const [A, B] = input[0].split(" ").map(Number);
 let count = 0;
 function isSolutionNumber(number){
     if(number % 3 === 0) return true;
-    else if( `${number}`.includes("3") || `${number}`.includes("6")|| `${number}`.includes("9")) return true;
+    //else if( `${number}`.includes("3") || `${number}`.includes("6")|| `${number}`.includes("9")) return true;
+    return /[369]/.test(String(number));
 }
 
 
