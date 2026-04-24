@@ -8,7 +8,7 @@ function isEven(n){
     else false;
 }
 
-function isFive(n){
+if(isEven(n)){
     let x = Math.floor(n / 10);
     let y = n % 10;
     
@@ -17,8 +17,4 @@ function isFive(n){
     else answer = "No";
 }
 
-if(isEven(n)){
-    isFive(n);
-    console.log(answer);
-}
-
+console.log(answer);
