@@ -13,11 +13,11 @@ if(o === cal[0]){
     console.log(`${a} ${o} ${c} = ${a - c}`)
 }
 else if(o === cal[2]){
-    console.log(`${a} ${o} ${c} = ${a / c}`)
+    console.log(`${a} ${o} ${c} = ${Math.floor(a / c)}`)
 }
 else if(o === cal[3]){
     console.log(`${a} ${o} ${c} = ${a * c}`)
 }else{
     console.log("False");
 }
-    
+      
