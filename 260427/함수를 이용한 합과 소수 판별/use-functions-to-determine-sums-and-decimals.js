@@ -5,6 +5,7 @@ const [A, B] = input[0].split(" ").map(Number);
 
 let count = 0;
 
+//소수판별
 function isPrime(number) {
     if (number < 2) return false;
     if (number === 2) return true;
@@ -15,12 +16,14 @@ function isPrime(number) {
     return true;
 }
 
+//자릿수 합
 function getSum(number) {
     return String(number).split("").reduce((acc, cur) => acc + Number(cur), 0);
 }
 
+//짝수판별
 function even(number) {
-    if (number % 2 === 0) return true;
+    return number % 2 === 0;
 }
 
 for (let i = A; i <= B; i++) {
