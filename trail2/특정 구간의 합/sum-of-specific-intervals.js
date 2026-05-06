@@ -1,22 +1,25 @@
 const fs = require("fs");
 const input = fs.readFileSync(0).toString().trim().split('\n');
 const [n, m] = input[0].split(" ").map(Number);
-const A = input[1].split(" ").map(Number);
+const A = input[1].split(" ").map(Number); // temp
 const queries = input.slice(2).map(line => line.split(" ").map(Number));
 
-//누적합 배열 생성
-const prefixSum = new Array(n+1).fill(0);
+const arr = Array(n+1);
+arr[0] = 0;
 
-for(let i=0; i<n; i++){
-    prefixSum[i+1] = prefixSum[i] + A[i];
+for(let i = 1; i<=n; i++){
+    arr[i] = A[i - 1];
 }
 
-const result = [];
-
-for(let i=0; i<m; i++){
-    const [a1, a2] = queries[i];
-    const sum = prefixSum[a2] - prefixSum[a1-1];
-    result.push(sum);
+function getAnswer(a1, a2){
+    let returnValue = 0;
+    for(let i = a1; i<= a2; i++){
+        returnValue += arr[i];
+    }
+    return returnValue;
 }
 
-console.log(result.join("\n"))
+for(let i = 0; i< queries.length; i++){
+    let [a1 , a2] = queries[i];
+    console.log(getAnswer(a1, a2));
+}
