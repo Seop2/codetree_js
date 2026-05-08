@@ -1,0 +1,11 @@
+const fs = require("fs");
+const input = fs.readFileSync(0).toString().trim().split('\n');
+const N = Number(input[0]);
+
+function factorialFn(n){
+    if(n === 1 | n === 0)return 1;
+    else return n * factorialFn(n-1)
+}
+
+const result = factorialFn(N);
+console.log(result);
